@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Portfolio</title>
+    <style>
+        .highlight {
+            background: linear-gradient(90deg, rgba(0, 183, 255, 0.5), rgba(0, 255, 136, 0.5));
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        #canvas-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        #rocket {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 60px;
+            transition: transform 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div id="particles-js"></div>
+    <canvas id="canvas-bg"></canvas>
+    <img id="rocket" src="https://cdn-icons-png.flaticon.com/512/5731/5731767.png" alt="Rocket">
+    <div class="relative isolate overflow-hidden">
+        <div class="container mx-auto px-6 py-10">
+            <header class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-blue-400">My Portfolio</h1>
+                <a href="https://www.linkedin.com/in/13hagyesh/" class="text-blue-400 hover:underline">LinkedIn</a>
+            </header>
+            
+            <section class="mt-10">
+                <h2 class="text-4xl font-bold">Hello, I'm Bhagyesh</h2>
+                <p class="mt-4 text-lg">Proficient AI/ML developer with expertise in building scalable data-driven solutions, advanced NLP pipelines, and AI-powered applications.</p>
+            </section>
+            
+            <section class="mt-10">
+                <h2 class="text-2xl font-bold">Skills</h2>
+                <ul class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 text-lg">
+                    <li class="highlight">Python</li>
+                    <li class="highlight">JavaScript</li>
+                    <li class="highlight">C++</li>
+                    <li class="highlight">MongoDB</li>
+                    <li class="highlight">AWS</li>
+                    <li class="highlight">Power BI</li>
+                    <li class="highlight">Flask</li>
+                    <li class="highlight">Machine Learning</li>
+                    <li class="highlight">FastAPI</li>
+                </ul>
+            </section>
+            
+            <section class="mt-10">
+                <h2 class="text-2xl font-bold">Experience</h2>
+                <div class="mt-4">
+                    <h3 class="text-xl font-semibold">AI/ML Developer - Sheridan Centre for Applied AI</h3>
+                    <p class="text-gray-300">Sep 2024 – Present, Oakville</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Developed an automated pipeline to extract fleet management KPIs using Meta Llama 3 LLM.</li>
+                        <li>Enhanced KPI extraction accuracy by 20% using prompt engineering and few-shot learning.</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-xl font-semibold">Machine Learning Data Scientist</h3>
+                    <p class="text-gray-300">May 2024 – Aug 2024, Oakville</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Engineered data exploration scripts analyzing 30,000+ osteoporosis patient records.</li>
+                        <li>Improved model accuracy by 40% through a voting technique.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="mt-10">
+                <h2 class="text-2xl font-bold">Projects</h2>
+                <div class="mt-4">
+                    <h3 class="text-xl font-semibold">Advanced RAG-Based Chatbot</h3>
+                    <p>Built a document-aware chatbot using AWS Amplify, DynamoDB, OpenSearch, and Claude v2 LLM.</p>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-xl font-semibold">SnapCal</h3>
+                    <p>Developed a Flask-based food image recognition app using Google's Inception v2 Model.</p>
+                </div>
+            </section>
+            
+            <footer class="mt-10 text-center">
+                <p>&copy; 2025 Bhagyesh Patel . All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 2 },
+                color: { value: "#ffffff" },
+                line_linked: { enable: true, distance: 150, color: "#ffffff" }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const highlights = document.querySelectorAll(".highlight");
+            highlights.forEach(highlight => {
+                highlight.addEventListener("mouseover", () => {
+                    highlight.style.transform = "scale(1.1)";
+                    highlight.style.transition = "0.3s ease-in-out";
+                });
+                highlight.addEventListener("mouseout", () => {
+                    highlight.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+    <script>
+        const rocket = document.getElementById("rocket");
+        window.addEventListener("scroll", function() {
+            let scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            let moveDistance = -scrollPercentage * (window.innerHeight + 100);
+            rocket.style.transform = `translateY(${moveDistance}px)`;
+        });
+    </script>
+</body>
+</html>
