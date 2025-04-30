@@ -1,0 +1,59 @@
+/* General body styling (can be overridden by Tailwind classes in HTML) */
+body {
+    /* Example: ensure bg-gray-900 and text-white are applied if CDN is removed */
+    /* background-color: #1a202c; */
+    /* color: #ffffff; */
+    font-family: sans-serif; /* Basic font */
+}
+
+/* Styling for the skill highlight effect */
+.highlight {
+    background: linear-gradient(90deg, rgba(0, 183, 255, 0.5), rgba(0, 255, 136, 0.5));
+    padding: 3px 8px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensures background fits content */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for skill highlights */
+.highlight:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Styling for the particles background container */
+#particles-js {
+    position: fixed; /* Fixed position to stay in background */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* Optional: Add a subtle background if needed, but particles.js usually handles this */
+    /* background: rgba(0, 0, 0, 0.5); */
+    z-index: -1; /* Place behind other content */
+}
+
+/* Styling for the canvas background (currently unused in JS) */
+#canvas-bg {
+    position: fixed; /* Fixed position */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(10, 10, 20, 0.5); /* Example dark semi-transparent background */
+    z-index: -2; /* Place even further behind */
+}
+
+/* Styling for the rocket image */
+#rocket {
+    position: fixed; /* Fixed position relative to viewport */
+    bottom: 10px; /* Position from bottom */
+    right: 20px; /* Position from right */
+    width: 60px; /* Rocket size */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s ease-out; /* Smooth transition for movement */
+    z-index: 10; /* Ensure it's above background elements */
+}
+
+/* Ensure Tailwind utility classes take precedence if needed.
+   If removing the Tailwind CDN, you would need to define all necessary styles here
+   or use a build process to generate a CSS file from Tailwind. */
